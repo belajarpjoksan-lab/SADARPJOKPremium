@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@layer utilities {
+  @media print {
+    @page {
+      size: 215mm 330mm;
+      margin: 12mm 14mm;
+    }
+
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    /* Hide screen UI elements */
+    .no-print,
+    .no-print *,
+    header,
+    aside,
+    nav,
+    button,
+    footer,
+    .sidebar,
+    [role="navigation"],
+    [role="banner"],
+    .no-print-important {
+      display: none !important;
+    }
+
+    /* Reset layouts for proper flow on F4 paper without clipping/overflow */
+    html, body, #root, .min-h-screen, .flex-1, .flex, main, .grid, .lg\:grid-cols-12 {
+      display: block !important;
+      overflow: visible !important;
+      height: auto !important;
+      min-height: 0 !important;
+      max-height: none !important;
+      position: static !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      border: none !important;
+      box-shadow: none !important;
+      background: white !important;
+      color: black !important;
+    }
+
+    /* Target standard document sheet containers to render nicely as F4 pages */
+    .lg\:col-span-8, .lg\:col-span-7, .lg\:col-span-12, #printable-modul, .print-area, .print-sheet {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 0.8cm !important;
+      border: none !important;
+      box-shadow: none !important;
+      background: white !important;
+      color: black !important;
+      position: static !important;
+      overflow: visible !important;
+    }
+
+    body {
+      background: white !important;
+      color: black !important;
+    }
+
+    /* Print page-break controls */
+    .page-break-avoid {
+      page-break-inside: avoid !important;
+      break-inside: avoid !important;
+    }
+
+    .page-break-after {
+      page-break-after: always !important;
+      break-after: always !important;
+    }
+
+    thead {
+      display: table-header-group !important;
+    }
+    
+    tr {
+      page-break-inside: avoid !important;
+      break-inside: avoid !important;
+    }
+
+    /* Ensure tables look standard on print */
+    table {
+      border-collapse: collapse !important;
+      width: 100% !important;
+    }
+  }
+}
