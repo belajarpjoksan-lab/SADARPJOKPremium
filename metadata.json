@@ -1,0 +1,6 @@
+{
+  "name": "SADAR - Administrasi Guru PJOK Premium",
+  "description": "Aplikasi Administrasi Guru PJOK Sekolah Dasar Premium untuk mengelola Modul Ajar (RPP) AI, Jurnal Mengajar, Absensi, Penilaian, dan Rubrik Fisik.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
